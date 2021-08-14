@@ -3,7 +3,7 @@ from keras.models import load_model
 from keras.preprocessing import image
 import os
 from werkzeug.utils import secure_filename
-from IPython.utils import process
+
 
 app = Flask(__name__)
 
@@ -52,4 +52,4 @@ def get_output():
 
 
 if __name__ == '__main__':
-    app.run(debug=True,port=process.env.PORT)
+    app.run(debug=True,port=int(os.environ.get('PORT', 3000)))
